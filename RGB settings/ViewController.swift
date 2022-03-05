@@ -95,11 +95,7 @@ class ViewController: UIViewController {
         labelAlpha.text = String((round(alphaSlider.value * 100) / 100))
         
         
-        colorRectangle.backgroundColor = UIColor(
-            red: 0.5,
-            green: 0.5,
-            blue: 0.5,
-            alpha: 1.0)
+        changeColor()
     }
     
 }
