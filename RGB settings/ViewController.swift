@@ -19,15 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet var labelGreen: UILabel!
     @IBOutlet var labelBlue: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        colorRectangle.layer.cornerRadius = 20
-        
-        labelRed.text = "\((round(redSlider.value * 100) / 100))"
-        labelGreen.text = "\((round(greenSlider.value * 100) / 100))"
-        labelBlue.text = "\((round(blueSlider.value * 100) / 100))"
-    }
+    colorRectangle.layer.cornerRadius = 20
     
     func changeColor() {
         let redColor = CGFloat(redSlider.value)
@@ -41,18 +33,30 @@ class ViewController: UIViewController {
             alpha: 1.0)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        changeColor()
+        
+        labelRed.text = String((round(redSlider.value * 100) / 100))
+        labelGreen.text = String((round(greenSlider.value * 100) / 100))
+        labelBlue.text = String((round(blueSlider.value * 100) / 100))
+    
+    }
+    
+    
     @IBAction func redSliderAction() {
-        labelRed.text = "\((round(redSlider.value * 100) / 100))"
+        labelRed.text = String((round(redSlider.value * 100) / 100))
         changeColor()
     }
     
     @IBAction func greenSliderAction() {
-        labelGreen.text = "\((round(greenSlider.value * 100) / 100))"
+        labelGreen.text = String((round(greenSlider.value * 100) / 100))
         changeColor()
     }
     
     @IBAction func blueSliderAction() {
-        labelBlue.text = "\((round(blueSlider.value * 100) / 100))"
+        labelBlue.text = String((round(blueSlider.value * 100) / 100))
         changeColor()
     }
 
