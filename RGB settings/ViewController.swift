@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet var labelGreen: UILabel!
     @IBOutlet var labelBlue: UILabel!
     
-    colorRectangle.layer.cornerRadius = 20
-    
     func changeColor() {
         let redColor = CGFloat(redSlider.value)
         let greenColor = CGFloat(greenSlider.value)
@@ -35,6 +33,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        colorRectangle.layer.cornerRadius = 20
         
         changeColor()
         
