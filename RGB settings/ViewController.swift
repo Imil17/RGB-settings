@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet var labelGreen: UILabel!
     @IBOutlet var labelBlue: UILabel!
     
+    @IBOutlet var resetButton: UIButton!
+    
     func changeColor() {
         let redColor = CGFloat(redSlider.value)
         let greenColor = CGFloat(greenSlider.value)
@@ -34,7 +36,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorRectangle.layer.cornerRadius = 20
+        colorRectangle.layer.cornerRadius = 16
+        resetButton.layer.cornerRadius = 12
         
         changeColor()
         
@@ -59,6 +62,18 @@ class ViewController: UIViewController {
         labelBlue.text = String((round(blueSlider.value * 100) / 100))
         changeColor()
     }
-
+    
+    @IBAction func resetButtonPressed() {
+        redSlider.value = 0.5
+        greenSlider.value = 0.5
+        blueSlider.value = 0.5
+        
+        colorRectangle.backgroundColor = UIColor(
+            red: 0.5,
+            green: 0.5,
+            blue: 0.5,
+            alpha: 1.0)
+    }
+    
 }
 
